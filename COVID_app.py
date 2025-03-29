@@ -352,7 +352,7 @@ def plot_state():
         data = pd.DataFrame.from_dict(df['actualsTimeseries'])
         data['Date'] = pd.to_datetime(data['date'])
         data = data.set_index('Date')
-        return data  # 임시로 추가한 반환값
+    return data  # 임시로 추가한 반환값
 
             try:
                 data['new_negative_tests'] = data['cumulativeNegativeTests'].diff()
