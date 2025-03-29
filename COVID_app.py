@@ -345,7 +345,7 @@ def plot_county(county):
 
 def plot_state():
     @st.cache(ttl=3*60*60, suppress_st_warning=True)
-def get_data():
+    def get_data():
     def get_testing_data_state():
             st.text('Getting testing data for California State')
             path1 = 'https://data.covidactnow.org/latest/us/states/CA.OBSERVED_INTERVENTION.timeseries.json'
