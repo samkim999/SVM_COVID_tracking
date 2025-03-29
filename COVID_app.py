@@ -46,7 +46,7 @@ FIPSs.columns = ['State', 'County', 'FIPS']
 FIPSs['FIPS'].fillna(0, inplace = True)
 FIPSs['FIPS'] = FIPSs.FIPS.astype(int).astype(str).str.zfill(5)
 
-@st.cache(ttl=3*60*60)
+@st.cache(ttl=3*60*60
 def get_testing_data(County):
     apiKey = '9fe19182c5bf4d1bb105da08e593a578'
     if len(County) == 1:
