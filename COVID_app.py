@@ -32,8 +32,8 @@ sidebar_selection = st.sidebar.radio(
     ['Select Counties', 'California'],
 )
 
-@st.cache(ttl=3*60*60, suppress_st_warning=True)
-def get_data():
+@st.cache_data(ttl=3*60*60)
+  def get_data():  # ❌ ← 여기 들여쓰기 하나 너무 많음
     US_confirmed = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv'
     US_deaths = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv'
     confirmed = pd.read_csv(US_confirmed)
