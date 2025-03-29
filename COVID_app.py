@@ -46,7 +46,7 @@ FIPSs.columns = ['State', 'County', 'FIPS']
 FIPSs['FIPS'].fillna(0, inplace = True)
 FIPSs['FIPS'] = FIPSs.FIPS.astype(int).astype(str).str.zfill(5)
 
-@st.cache(ttl=3*60*60
+@st.cache(ttl=3*60*60)
 def get_testing_data(County):
     apiKey = '9fe19182c5bf4d1bb105da08e593a578'
     if len(County) == 1:
@@ -344,7 +344,8 @@ def plot_county(county):
 
 
 def plot_state():
-    @st.cache(ttl=3*60*60, suppress_st_warning=True)
+    @st.cache_data(ttl=3*60*60)
+def get_data():
     def get_testing_data_state():
             st.text('Getting testing data for California State')
             path1 = 'https://data.covidactnow.org/latest/us/states/CA.OBSERVED_INTERVENTION.timeseries.json'
