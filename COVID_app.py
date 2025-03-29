@@ -22,7 +22,7 @@ if _ENABLE_PROFILING:
 today = date.today()
 
 st.set_page_config(
-    page_title="COVID19: EpiCenter for Disease Dynamics",
+    page_title="Urban Real-estate : Signal & Insight",
     layout='wide',
     initial_sidebar_state='auto',
 )
