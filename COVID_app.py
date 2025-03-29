@@ -22,7 +22,7 @@ if _ENABLE_PROFILING:
 today = date.today()
 
 st.set_page_config(
-    page_title="Urban Real-estate : Signal & Insight",
+    page_title="도시 부동산 인사이트",
     layout='wide',
     initial_sidebar_state='auto',
 )
@@ -531,7 +531,7 @@ def plot_state():
 ## functions end here, title, sidebar setting and descriptions start here
 t1, t2 = st.columns(2)
 with t1:
-    st.markdown('# COVID-19 Data and Reporting')
+    st.markdown('# 도시 부동산 인사이트 ')
 
 with t2:
     st.write("")
