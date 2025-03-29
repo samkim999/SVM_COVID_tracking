@@ -344,15 +344,15 @@ def plot_county(county):
 
 
 def plot_state():
-    @st.cache(ttl=3*60*60)
-    def get_testing_data_state():    
-    pass        
-            st.text('Getting testing data for California State')
-            path1 = 'https://data.covidactnow.org/latest/us/states/CA.OBSERVED_INTERVENTION.timeseries.json'
-            df = json.loads(requests.get(path1).text)
-            data = pd.DataFrame.from_dict(df['actualsTimeseries'])
-            data['Date'] = pd.to_datetime(data['date'])
-            data = data.set_index('Date')
+    @st.cache_data(ttl=3*60*60)
+    def get_testing_data_state():
+        st.text('Getting testing data for California State')
+        path1 = 'https://data.covidactnow.org/latest/us/states/CA.OBSERVED_INTERVENTION.timeseries.json'
+        df = json.loads(requests.get(path1).text)
+        data = pd.DataFrame.from_dict(df['actualsTimeseries'])
+        data['Date'] = pd.to_datetime(data['date'])
+        data = data.set_index('Date')
+        return data  # 임시로 추가한 반환값
 
             try:
                 data['new_negative_tests'] = data['cumulativeNegativeTests'].diff()
